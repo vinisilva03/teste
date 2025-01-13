@@ -1,0 +1,26 @@
+<div>
+    <h2>Cadastro de Usuário</h2>
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <label for="name">Nome Completo:</label>
+      <input type="text" id="name" required [(ngModel)]="user.name" name="name">
+  
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" required [(ngModel)]="user.email" name="email">
+  
+      <label for="phone">Telefone:</label>
+      <input type="tel" id="phone" required [(ngModel)]="user.phone" name="phone">
+  
+      <label for="dob">Data de Nascimento:</label>
+      <input type="date" id="dob" required [(ngModel)]="user.dob" name="dob">
+  
+      <label for="userType">Tipo de Usuário:</label>
+      <select id="userType" required [(ngModel)]="user.userType" name="userType">
+        <option value="Administrador">Administrador</option>
+        <option value="Editor">Editor</option>
+        <option value="Visualizador">Visualizador</option>
+      </select>
+  
+      <button type="submit" [disabled]="!userForm.form.valid">Salvar</button>
+    </form>
+  </div>
+  
